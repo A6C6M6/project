@@ -1,4 +1,3 @@
-// Password Toggle Functionality
 const togglePassword = document.getElementById('togglePassword');
 const password = document.getElementById('password');
 
@@ -8,17 +7,14 @@ togglePassword.addEventListener('click', () => {
     togglePassword.classList.toggle('fa-eye-slash');
 });
 
-// Form Submission Handling
 document.getElementById('loginForm').addEventListener('submit', (e) => {
     e.preventDefault();
     const btn = document.getElementById('loginBtn');
-    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    btn.innerText = "Please wait...";
     btn.disabled = true;
-
-    // Simulate login delay
     setTimeout(() => {
         alert("Login Successful!");
-        btn.innerHTML = "Login";
+        btn.innerText = "Login";
         btn.disabled = false;
-    }, 2000);
+    }, 1500);
 });
